@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./config.js"></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <div class="brand-mark">✓</div>
+      <div>
+        <p class="eyebrow">Kuningizni tartibga soling</p>
+        <h1>Task Manager</h1>
+      </div>
+    </header>
+
+    <section class="panel">
+      <form id="accessForm" class="access-form">
+        <label for="accessKey">Shaxsiy kirish kaliti</label>
+        <div class="access-row">
+          <input id="accessKey" type="password" autocomplete="current-password" required placeholder="Render’da sozlangan kalit">
+          <button type="submit">Kirish</button>
+        </div>
+        <p class="hint">Kalit brauzeringizda saqlanadi va faqat sizning vazifalaringizni ochadi.</p>
+      </form>
+
+      <form id="taskForm" class="task-form" hidden>
+        <label for="taskTitle">Yangi vazifa</label>
+        <div class="task-input-row">
+          <input id="taskTitle" maxlength="200" required placeholder="Masalan: Kitob o‘qish">
+          <button type="submit" aria-label="Vazifa qo‘shish">+</button>
+        </div>
+      </form>
+
+      <div class="list-heading">
+        <h2>Vazifalarim</h2>
+        <span id="taskCount" class="count">0</span>
+      </div>
+      <p id="message" class="message" role="status">Kirish kalitini kiriting.</p>
+      <ul id="taskList" class="task-list"></ul>
+      <button id="logout" class="logout" type="button" hidden>Kirish kalitidan chiqish</button>
+    </section>
+    <footer>Oddiy reja — samarali kun.</footer>
+  </main>
+</body>
+</html>
